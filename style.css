@@ -1258,24 +1258,28 @@ body {
 }
 
 /* ================================================================
-   MOBILE COMPOSITION — ORIGINAL BOUQUET
+   MOBILE COMPOSITION
    ================================================================ */
 
 .mobile-bouquet {
-  display: none !important;
+  display: none;
 }
 
 @media (max-width: 600px) {
-  /* Keep the original desktop bouquet artwork on mobile. */
   .water {
-    height: 27vh;
+    height: 36vh;
   }
 
   .bouquet {
-    width: 680px;
-    height: 680px;
-    bottom: -35px;
-    z-index: 20;
+    width: 430px;
+    height: 400px;
+    bottom: -8px;
+    z-index: 12;
+  }
+
+  /* Hide the desktop bouquet artwork on phones. */
+  .bouquet .desktop-bouquet-part {
+    display: none !important;
   }
 
   .bouquet .stems,
@@ -1284,20 +1288,45 @@ body {
   .bouquet .buds,
   .bouquet > .bouquet__svg > .rose,
   .bouquet .bouquet-ribbon {
-    display: block !important;
-    visibility: visible !important;
+    display: none !important;
   }
 
+  .mobile-bouquet {
+    display: block;
+  }
+
+  .mobile-bouquet-stem {
+    fill: none;
+    stroke: #719b57;
+    stroke-width: 4;
+    stroke-linecap: round;
+    opacity: .7;
+    filter: drop-shadow(0 0 4px rgba(130, 180, 100, .35));
+  }
+
+  .mobile-bouquet-leaf {
+    opacity: .82;
+  }
+
+  .mobile-bouquet .rose-art {
+    animation-delay: 5.4s !important;
+  }
+
+  .mobile-bouquet .mobile-rose-2 .rose-art { animation-delay: 5.65s !important; }
+  .mobile-bouquet .mobile-rose-3 .rose-art { animation-delay: 5.9s !important; }
+  .mobile-bouquet .mobile-rose-4 .rose-art { animation-delay: 6.15s !important; }
+  .mobile-bouquet .mobile-rose-5 .rose-art { animation-delay: 6.4s !important; }
+
+  /* Remove the large decorative floating flowers around the bouquet. */
   .water-flower {
-    display: block !important;
-    visibility: visible !important;
+    display: none !important;
   }
 
   .lily-pad {
-    opacity: 1;
+    opacity: .68;
   }
 
-  /* The aurora is untouched; these are its existing mobile values. */
+  /* Make the aurora a visible part of the mobile sky. */
   .aurora {
     inset: -7% -45%;
   }
