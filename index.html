@@ -15,22 +15,25 @@
 
 <main class="scene">
 
-    <!-- BACKGROUND -->
-
     <div class="sky"></div>
 
     <div class="nebula nebula--one"></div>
-    <div class="nebula nebula--two"></div>
+<div class="nebula nebula--two"></div>
 
 
-    <!-- MOON -->
+
+    <!-- MAGICAL NORTHERN LIGHTS -->
+    <div class="aurora" aria-hidden="true">
+        <div class="aurora__curtain aurora__curtain--pink"></div>
+        <div class="aurora__curtain aurora__curtain--blue"></div>
+        <div class="aurora__curtain aurora__curtain--silver"></div>
+        <div class="aurora__cloud aurora__cloud--pink"></div>
+        <div class="aurora__cloud aurora__cloud--blue"></div>
+    </div>
 
     <div class="moon">
         <div class="moon__body"></div>
     </div>
-
-
-    <!-- STARS -->
 
     <div class="stars">
 
@@ -61,9 +64,6 @@
 
     </div>
 
-
-    <!-- CONSTELLATIONS -->
-
     <div class="constellations">
 
         <div class="constellation constellation--left">
@@ -82,9 +82,6 @@
 
     </div>
 
-
-    <!-- BIRTHDAY MESSAGE -->
-
     <div class="message">
 
         <div class="message__main">
@@ -96,9 +93,6 @@
         </div>
 
     </div>
-
-
-    <!-- FALLING ROSE PETALS -->
 
     <div class="floating-petals">
 
@@ -113,11 +107,6 @@
 
     </div>
 
-
-    <!-- =====================================================
-         MAGICAL WATER
-         ===================================================== -->
-
     <div class="water">
 
         <div class="water-glow"></div>
@@ -129,17 +118,11 @@
         <div class="water-ripple ripple--5"></div>
         <div class="water-ripple ripple--6"></div>
 
-
-        <!-- LILY PADS -->
-
         <div class="lily-pad lily-pad--1"></div>
         <div class="lily-pad lily-pad--2"></div>
         <div class="lily-pad lily-pad--3"></div>
         <div class="lily-pad lily-pad--4"></div>
         <div class="lily-pad lily-pad--5"></div>
-
-
-        <!-- FLOATING WATER FLOWERS -->
 
         <div class="water-flower water-flower--1">
             <span class="petal"></span>
@@ -177,9 +160,6 @@
             <i></i>
         </div>
 
-
-        <!-- WATER SPARKLES -->
-
         <div class="water-sparkles">
             <span>✦</span>
             <span>·</span>
@@ -193,11 +173,6 @@
 
     </div>
 
-
-    <!-- =====================================================
-         ROSE BOUQUET
-         ===================================================== -->
-
     <div class="bouquet">
 
         <div class="bouquet-glow"></div>
@@ -209,8 +184,6 @@
         >
 
             <defs>
-
-                <!-- OUTER PETAL -->
 
                 <radialGradient
                     id="outerPetal"
@@ -225,9 +198,6 @@
                     <stop offset="100%" stop-color="#8f2943"/>
                 </radialGradient>
 
-
-                <!-- MIDDLE PETAL -->
-
                 <radialGradient
                     id="middlePetal"
                     cx="28%"
@@ -240,9 +210,6 @@
                     <stop offset="100%" stop-color="#a52e49"/>
                 </radialGradient>
 
-
-                <!-- INNER PETAL -->
-
                 <radialGradient
                     id="innerPetal"
                     cx="25%"
@@ -254,9 +221,6 @@
                     <stop offset="100%" stop-color="#922943"/>
                 </radialGradient>
 
-
-                <!-- CENTER -->
-
                 <radialGradient
                     id="centerGradient"
                     cx="30%"
@@ -266,9 +230,6 @@
                     <stop offset="60%" stop-color="#bc3651"/>
                     <stop offset="100%" stop-color="#7d2039"/>
                 </radialGradient>
-
-
-                <!-- LEAF -->
 
                 <linearGradient
                     id="leafGradient"
@@ -282,9 +243,6 @@
                     <stop offset="100%" stop-color="#345d3d"/>
                 </linearGradient>
 
-
-                <!-- SMALL BUD -->
-
                 <radialGradient
                     id="budGradient"
                     cx="35%"
@@ -294,9 +252,6 @@
                     <stop offset="50%" stop-color="#ec7481"/>
                     <stop offset="100%" stop-color="#9b3048"/>
                 </radialGradient>
-
-
-                <!-- GLOW -->
 
                 <filter
                     id="roseGlow"
@@ -308,7 +263,6 @@
                     <feGaussianBlur stdDeviation="15"/>
                 </filter>
 
-
                 <filter
                     id="softGlow"
                     x="-150%"
@@ -319,11 +273,6 @@
                     <feGaussianBlur stdDeviation="7"/>
                 </filter>
 
-
-                <!-- =================================================
-                     ROSE
-                     ================================================= -->
-
                 <g id="roseArtwork">
 
                     <circle
@@ -332,7 +281,6 @@
                         cy="0"
                         r="64"
                     />
-
 
                     <path
                         class="petal petal--back"
@@ -351,7 +299,6 @@
                             Z
                         "
                     />
-
 
                     <path
                         class="petal petal--large"
@@ -373,7 +320,6 @@
                         "
                     />
 
-
                     <path
                         class="petal petal--middle"
                         d="
@@ -393,7 +339,6 @@
                             Z
                         "
                     />
-
 
                     <path
                         class="petal-fold"
@@ -420,7 +365,6 @@
                         d="M -43 -15 C -35 -5 -25 -2 -16 -5"
                     />
 
-
                     <path
                         class="petal petal--inner"
                         d="
@@ -437,7 +381,6 @@
                         "
                     />
 
-
                     <path
                         class="center-petal"
                         d="
@@ -452,7 +395,6 @@
                             Z
                         "
                     />
-
 
                     <path
                         class="rose-center"
@@ -469,7 +411,6 @@
                         "
                     />
 
-
                     <circle
                         class="rose-shine"
                         cx="1"
@@ -478,9 +419,6 @@
                     />
 
                 </g>
-
-
-                <!-- SMALL BUD -->
 
                 <g id="smallBud">
 
@@ -513,9 +451,6 @@
 
                 </g>
 
-
-                <!-- LEAF -->
-
                 <g id="leafArtwork">
 
                     <path
@@ -539,11 +474,6 @@
                 </g>
 
             </defs>
-
-
-            <!-- =================================================
-                 STEMS
-                 ================================================= -->
 
             <g class="stems">
 
@@ -574,11 +504,6 @@
 
             </g>
 
-
-            <!-- =================================================
-                 CURVED DECORATIVE SIDE STEMS
-                 ================================================= -->
-
             <g class="decorative-stems">
 
                 <path
@@ -602,11 +527,6 @@
                 />
 
             </g>
-
-
-            <!-- =================================================
-                 LEAVES
-                 ================================================= -->
 
             <g class="leaves">
 
@@ -644,11 +564,6 @@
 
             </g>
 
-
-            <!-- =================================================
-                 LITTLE BUDS
-                 ================================================= -->
-
             <g class="buds">
 
                 <g transform="translate(190 510) scale(.65)">
@@ -668,67 +583,27 @@
                 </g>
 
             </g>
-
-
-            <!-- =================================================
-                 ROSES
-                 ================================================= -->
-
-            <g
-                class="rose rose--1"
-                transform="translate(150 390)"
-            >
-                <g class="rose-art">
-                    <use href="#roseArtwork"/>
-                </g>
+            <!-- ROSES — original artwork, simply scaled down -->
+            <g class="rose rose--1" transform="translate(150 390) scale(.68)">
+                <g class="rose-art"><use href="#roseArtwork"/></g>
             </g>
 
-
-            <g
-                class="rose rose--2"
-                transform="translate(245 290) scale(.86)"
-            >
-                <g class="rose-art">
-                    <use href="#roseArtwork"/>
-                </g>
+            <g class="rose rose--2" transform="translate(245 290) scale(.58)">
+                <g class="rose-art"><use href="#roseArtwork"/></g>
             </g>
 
-
-            <g
-                class="rose rose--3"
-                transform="translate(350 135) scale(.92)"
-            >
-                <g class="rose-art">
-                    <use href="#roseArtwork"/>
-                </g>
+            <g class="rose rose--3" transform="translate(350 135) scale(.64)">
+                <g class="rose-art"><use href="#roseArtwork"/></g>
             </g>
 
-
-            <g
-                class="rose rose--4"
-                transform="translate(455 265) scale(.82)"
-            >
-                <g class="rose-art">
-                    <use href="#roseArtwork"/>
-                </g>
+            <g class="rose rose--4" transform="translate(455 265) scale(.56)">
+                <g class="rose-art"><use href="#roseArtwork"/></g>
             </g>
 
-
-            <g
-                class="rose rose--5"
-                transform="translate(555 355) scale(.72)"
-            >
-                <g class="rose-art">
-                    <use href="#roseArtwork"/>
-                </g>
+            <g class="rose rose--5" transform="translate(555 355) scale(.50)">
+                <g class="rose-art"><use href="#roseArtwork"/></g>
             </g>
-
-
-            <!-- =================================================
-                 RIBBON / BOUQUET BASE
-                 ================================================= -->
-
-            <g class="bouquet-ribbon">
+<g class="bouquet-ribbon">
 
                 <path
                     class="ribbon-glow"
@@ -777,9 +652,6 @@
         </svg>
 
     </div>
-
-
-    <!-- FINAL SPARKLES -->
 
     <div class="sparkles">
 
