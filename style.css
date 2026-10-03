@@ -2384,107 +2384,99 @@ body {
 
 #musicToggle {
     position: absolute;
-    z-index: 10;
+    z-index: 20;
 
-    /* sits on the dark-blue part of the moon */
-    left: 53px;
+    /* sits in the middle of the dark-blue moon circle */
+    left: 52px;
     top: 18px;
 
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
 
     padding: 0;
-    border: 0;
-    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+
+    background: rgba(8, 30, 57, 0.72);
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     cursor: pointer;
+
+    box-shadow:
+        0 0 8px rgba(190, 225, 255, 0.2),
+        inset 0 0 8px rgba(255, 255, 255, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.sound-icon {
-    position: absolute;
-
-    width: 19px;
-    height: 19px;
+#musicToggle svg {
+    width: 17px;
+    height: 17px;
 
     fill: none;
     stroke: rgba(255, 255, 255, 0.9);
-    stroke-width: 1.8;
+    stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
 
-    filter: drop-shadow(0 0 4px rgba(220, 240, 255, 0.35));
-
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    filter: drop-shadow(0 0 3px rgba(220, 240, 255, 0.4));
 }
 
-.sound-icon--on {
-    opacity: 1;
+#musicToggle:hover {
+    transform: scale(1.08);
+
+    background: rgba(18, 48, 78, 0.88);
+
+    box-shadow:
+        0 0 14px rgba(190, 225, 255, 0.35),
+        inset 0 0 8px rgba(255, 255, 255, 0.08);
 }
 
-.sound-icon--off {
+#musicToggle:active {
+    transform: scale(0.95);
+}
+
+/* When music is OFF, remove the sound waves */
+#musicToggle.muted .sound-wave {
     opacity: 0;
 }
 
-/* MUSIC BUTTON */
+/* Draw a subtle slash when muted */
+#musicToggle.muted::after {
+    content: "";
 
-#musicToggle {
     position: absolute;
-    z-index: 20;
 
-    /* EXACTLY over the dark-blue part of the crescent */
-    left: 53px;
-    top: 18px;
+    width: 18px;
+    height: 1.5px;
 
-    width: 30px;
-    height: 30px;
+    background: rgba(255, 255, 255, 0.9);
 
-    padding: 0;
-    border: none;
-    background: transparent;
+    transform: rotate(-45deg);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-
-    font-size: 18px;
-    line-height: 1;
+    border-radius: 2px;
 }
 
-#musicToggle span {
-    position: absolute;
-    display: block;
 
-    transition: opacity 0.15s ease;
-}
-
-#musicToggle .sound-on {
-    opacity: 0;
-}
-
-#musicToggle .sound-off {
-    opacity: 1;
-}
-
-#musicToggle.playing .sound-on {
-    opacity: 1;
-}
-
-#musicToggle.playing .sound-off {
-    opacity: 0;
-}
-
+/* Mobile */
 @media (max-width: 600px) {
     #musicToggle {
-        left: 53px;
+        left: 52px;
         top: 18px;
+
         width: 30px;
         height: 30px;
-        font-size: 17px;
+    }
+
+    #musicToggle svg {
+        width: 16px;
+        height: 16px;
     }
 }
