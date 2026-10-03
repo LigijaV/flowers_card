@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   /*
-   * The birthday scene is intentionally CSS/SCSS driven.
-   * JavaScript is kept minimal so the animation remains
-   * easy to edit and control.
+   * Everything is animated through SCSS/CSS.
+   *
+   * JavaScript is intentionally kept minimal so the
+   * animation remains easy to edit.
    */
 
   const scene = document.querySelector(".scene");
