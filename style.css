@@ -1501,3 +1501,46 @@ body {
     opacity: 0.78;
   }
 }
+/* =========================================================
+   MOBILE BOUQUET — RESTORE ORIGINAL ARTWORK
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* Keep the existing 5 roses exactly where they are */
+  .bouquet {
+    z-index: 20;
+    overflow: visible;
+  }
+
+  .bouquet__svg {
+    overflow: visible;
+  }
+
+  /* RESTORE the bouquet's supporting artwork */
+  .bouquet .stems,
+  .bouquet .decorative-stems,
+  .bouquet .leaves,
+  .bouquet .buds,
+  .bouquet .bouquet-ribbon {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1;
+  }
+
+  /* Restore the flowers floating around the bouquet */
+  .water-flower {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1;
+  }
+
+  /* Restore their original mobile positions */
+  .water-flower--1 {
+    left: 3%;
+  }
+
+  .water-flower--3 {
+    right: 3%;
+  }
+}
