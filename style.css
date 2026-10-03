@@ -2480,3 +2480,9 @@ body {
         height: 16px;
     }
 }
+
+/* Allow clicks to pass through decorative sky layers */
+.stars,
+.constellations {
+    pointer-events: none;
+}
