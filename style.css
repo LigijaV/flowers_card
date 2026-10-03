@@ -1258,28 +1258,24 @@ body {
 }
 
 /* ================================================================
-   MOBILE COMPOSITION
+   MOBILE COMPOSITION — ORIGINAL BOUQUET
    ================================================================ */
 
 .mobile-bouquet {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 600px) {
+  /* Keep the original desktop bouquet artwork on mobile. */
   .water {
-    height: 36vh;
+    height: 27vh;
   }
 
   .bouquet {
-    width: 430px;
-    height: 400px;
-    bottom: -8px;
-    z-index: 12;
-  }
-
-  /* Hide the desktop bouquet artwork on phones. */
-  .bouquet .desktop-bouquet-part {
-    display: none !important;
+    width: 680px;
+    height: 680px;
+    bottom: -35px;
+    z-index: 20;
   }
 
   .bouquet .stems,
@@ -1288,45 +1284,20 @@ body {
   .bouquet .buds,
   .bouquet > .bouquet__svg > .rose,
   .bouquet .bouquet-ribbon {
-    display: none !important;
+    display: block !important;
+    visibility: visible !important;
   }
 
-  .mobile-bouquet {
-    display: block;
-  }
-
-  .mobile-bouquet-stem {
-    fill: none;
-    stroke: #719b57;
-    stroke-width: 4;
-    stroke-linecap: round;
-    opacity: .7;
-    filter: drop-shadow(0 0 4px rgba(130, 180, 100, .35));
-  }
-
-  .mobile-bouquet-leaf {
-    opacity: .82;
-  }
-
-  .mobile-bouquet .rose-art {
-    animation-delay: 5.4s !important;
-  }
-
-  .mobile-bouquet .mobile-rose-2 .rose-art { animation-delay: 5.65s !important; }
-  .mobile-bouquet .mobile-rose-3 .rose-art { animation-delay: 5.9s !important; }
-  .mobile-bouquet .mobile-rose-4 .rose-art { animation-delay: 6.15s !important; }
-  .mobile-bouquet .mobile-rose-5 .rose-art { animation-delay: 6.4s !important; }
-
-  /* Remove the large decorative floating flowers around the bouquet. */
   .water-flower {
-    display: none !important;
+    display: block !important;
+    visibility: visible !important;
   }
 
   .lily-pad {
-    opacity: .68;
+    opacity: 1;
   }
 
-  /* Make the aurora a visible part of the mobile sky. */
+  /* The aurora is untouched; these are its existing mobile values. */
   .aurora {
     inset: -7% -45%;
   }
@@ -1372,64 +1343,5 @@ body {
     right: 5%;
     top: 7%;
     transform: scale(.7);
-  }
-}
-
-/* =========================================================
-   MOBILE FLOWERS — RESTORE THE ORIGINAL BOUQUET
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-  /* Use the original large bouquet on mobile. */
-  .bouquet {
-    width: 680px !important;
-    height: 680px !important;
-    bottom: -35px !important;
-    z-index: 20 !important;
-    overflow: visible !important;
-  }
-
-  .bouquet__svg {
-    width: 100%;
-    height: 100%;
-    overflow: visible !important;
-  }
-
-  /* Hide the newer compact JavaScript bouquet. */
-  .mobile-bouquet {
-    display: none !important;
-  }
-
-  /* Restore all of the original bouquet artwork. */
-  .bouquet .stems,
-  .bouquet .decorative-stems,
-  .bouquet .leaves,
-  .bouquet .buds,
-  .bouquet .bouquet-ribbon,
-  .bouquet > .bouquet__svg > .rose {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1;
-  }
-
-  /* Restore the original water flowers around the bouquet. */
-  .water-flower {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1;
-  }
-
-  .water-flower--1 {
-    left: 3%;
-  }
-
-  .water-flower--3 {
-    right: 3%;
-  }
-
-  /* Original water height from the old mobile composition. */
-  .water {
-    height: 27vh !important;
   }
 }
