@@ -646,9 +646,9 @@ body {
   bottom: -35px;
   width: min(680px, 95vw);
   height: min(700px, 92vh);
-  transform: translateX(-50%) translateY(50px);
+  transform: translateX(-50%) translateY(90px) scale(0.94);
   opacity: 0;
-  animation: bouquet-in 1.5s ease-out forwards 5.1s;
+  animation: bouquet-in 2.2s cubic-bezier(0.16, 0.72, 0.25, 1) forwards 8.2s;
 }
 
 .bouquet__svg {
@@ -661,13 +661,14 @@ body {
   position: absolute;
   left: 50%;
   top: 43%;
-  width: 72%;
-  height: 65%;
+  width: 80%;
+  height: 70%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(87, 159, 210, 0.3), rgba(72, 128, 190, 0.14) 40%, transparent 72%);
-  filter: blur(60px);
+  background: radial-gradient(ellipse, rgba(104, 174, 222, 0.34), rgba(72, 128, 190, 0.17) 38%, transparent 72%);
+  filter: blur(65px);
   pointer-events: none;
+  animation: bouquet-aura 5s ease-in-out infinite 10s;
 }
 
 .stem {
@@ -683,23 +684,23 @@ body {
 }
 
 .stem--1 {
-  animation-delay: 5.35s;
+  animation-delay: 8.55s;
 }
 
 .stem--2 {
-  animation-delay: 5.55s;
+  animation-delay: 8.7s;
 }
 
 .stem--3 {
-  animation-delay: 5.75s;
+  animation-delay: 8.85s;
 }
 
 .stem--4 {
-  animation-delay: 5.95s;
+  animation-delay: 9s;
 }
 
 .stem--5 {
-  animation-delay: 6.15s;
+  animation-delay: 9.15s;
 }
 
 .decorative-stem {
@@ -772,41 +773,40 @@ body {
   stroke-linecap: round;
 }
 
-
 .rose-art {
   transform-box: fill-box;
   transform-origin: center;
   opacity: 0;
   transform: scale(0.05) rotate(-8deg);
   filter: blur(8px);
-  animation: rose-bloom 1.6s cubic-bezier(0.12, 0.78, 0.22, 1.25) forwards;
+  animation: rose-bloom 1.8s cubic-bezier(0.12, 0.78, 0.22, 1.25) forwards;
 }
 
 .rose--1 .rose-art {
-  animation-delay: 5.95s;
+  animation-delay: 9.2s;
 }
 
 .rose--2 .rose-art {
-  animation-delay: 6.3s;
+  animation-delay: 9.5s;
 }
 
 .rose--3 .rose-art {
-  animation-delay: 6.65s;
+  animation-delay: 9.8s;
 }
 
 .rose--4 .rose-art {
-  animation-delay: 7s;
+  animation-delay: 10.1s;
 }
 
 .rose--5 .rose-art {
-  animation-delay: 7.35s;
+  animation-delay: 10.4s;
 }
 
 .rose-aura {
   fill: rgba(255, 108, 132, 0.5);
   opacity: 0;
   filter: url(#roseGlow);
-  animation: aura-appear 1.6s ease forwards, aura-breathe 3.5s ease-in-out infinite 8.8s;
+  animation: aura-appear 1.6s ease forwards, aura-breathe 3.5s ease-in-out infinite 11s;
 }
 
 .petal {
@@ -851,6 +851,30 @@ body {
 .rose-shine {
   fill: rgba(255, 235, 226, 0.98);
   filter: drop-shadow(0 0 5px rgba(255, 220, 210, 0.95));
+}
+
+.bouquet-ribbon {
+  opacity: 0;
+  transform-origin: center;
+  animation: ribbon-appear 1.5s ease forwards 10.7s;
+}
+
+.ribbon {
+  fill: #b9475c;
+  stroke: rgba(104, 25, 43, 0.8);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 7px rgba(224, 81, 108, 0.35));
+}
+
+.ribbon-glow {
+  fill: rgba(255, 111, 136, 0.25);
+  filter: url(#softGlow);
+}
+
+.ribbon-tail {
+  fill: #a93650;
+  stroke: rgba(104, 25, 43, 0.75);
+  stroke-width: 2;
 }
 
 .meteors {
@@ -1216,6 +1240,67 @@ body {
   }
 }/*# sourceMappingURL=style.css.map */
 
+@keyframes bouquet-aura {
+  0%, 100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+@keyframes decorative-stem-grow {
+  from {
+    stroke-dashoffset: 300;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.85;
+  }
+}
+
+@keyframes leaves-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes buds-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes ribbon-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(15px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
 /* =========================================================
    MAGICAL NORTHERN LIGHTS — hot pink / light pink / blue / silver
    ========================================================= */
@@ -1329,7 +1414,7 @@ body {
 }
 
 /* ================================================================
-   MOBILE COMPOSITION — ORIGINAL BOUQUET
+   MOBILE COMPOSITION — ORIGINAL BOUQUET, SCALED TO SCREEN
    ================================================================ */
 
 .mobile-bouquet {
@@ -1337,6 +1422,9 @@ body {
 }
 
 @media (max-width: 600px) {
+
+  /* Keep the original bouquet, but make the entire artwork
+     fit inside the phone width. */
   .bouquet {
     width: 100vw !important;
     height: 100vw !important;
@@ -1346,6 +1434,7 @@ body {
     overflow: visible !important;
   }
 
+  /* DO NOT hide the original bouquet artwork */
   .bouquet .stems,
   .bouquet .decorative-stems,
   .bouquet .leaves,
@@ -1354,12 +1443,15 @@ body {
   .bouquet .bouquet-ribbon {
     display: block !important;
     visibility: visible !important;
+    opacity: 1;
   }
 
+  /* No generated compact/mobile bouquet */
   .mobile-bouquet {
     display: none !important;
   }
 
+  /* Keep the water flowers visible */
   .water-flower {
     display: block !important;
     visibility: visible !important;
@@ -1374,13 +1466,16 @@ body {
     right: 3%;
   }
 
+  /* Original water height */
   .water {
     height: 27vh;
   }
 
+  /* Moon */
   .moon {
     right: 5%;
     top: 7%;
     transform: scale(.7);
   }
 }
+
