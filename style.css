@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -1116,7 +1109,7 @@ body {
 
     fill: none;
 
-    stroke:
+    stroke: #638d4c;
 
     stroke-width: 6;
 
@@ -1401,6 +1394,39 @@ body {
     fill:
         url(#middlePetal);
 }
+/* Explicit SVG artwork fills */
+.bouquet__svg .petal--back,
+.bouquet__svg .petal--large {
+    fill: url(#outerPetal);
+}
+
+.bouquet__svg .petal--middle {
+    fill: url(#middlePetal);
+}
+
+.bouquet__svg .petal--inner,
+.bouquet__svg .center-petal {
+    fill: url(#innerPetal);
+}
+
+.bouquet__svg .rose-center {
+    fill: url(#centerGradient);
+}
+
+.bouquet__svg .stem,
+.bouquet__svg .decorative-stem {
+    fill: none;
+    stroke: #638d4c;
+}
+
+.bouquet__svg .leaf {
+    fill: url(#leafGradient);
+}
+
+.bouquet__svg .bud {
+    fill: url(#budGradient);
+}
+
 
 
 .petal--inner {
@@ -2272,9 +2298,11 @@ body {
 
     .bouquet {
         left: 50%;
-        bottom: -70px;
-        width: 520px;
-        height: 520px;
+        bottom: -18px;
+        width: 92vw;
+        height: 92vw;
+        max-width: 520px;
+        max-height: 520px;
         transform: translateX(-50%);
     }
 
