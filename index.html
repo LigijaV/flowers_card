@@ -830,7 +830,59 @@
         <source src="music.mpeg" type="audio/mpeg">
     </audio>
 
-<script src="main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const music = document.getElementById("birthdayMusic");
+    const button = document.getElementById("musicToggle");
+
+    if (!music || !button) {
+        console.error("Music setup failed.");
+        return;
+    }
+
+    function tryPlayMusic() {
+        music.play()
+            .then(() => {
+                button.classList.remove("muted");
+            })
+            .catch(() => {
+                // Browser blocked autoplay.
+                // User can start it by pressing the button.
+            });
+    }
+
+    // Try autoplay immediately.
+    tryPlayMusic();
+
+    // Button ON/OFF
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (music.paused) {
+            music.play()
+                .then(() => {
+                    button.classList.remove("muted");
+                })
+                .catch((error) => {
+                    console.error("Could not play music:", error);
+                });
+        } else {
+            music.pause();
+            button.classList.add("muted");
+        }
+    });
+
+    // If the browser blocked autoplay, the first tap anywhere
+    // will start the music.
+    document.addEventListener("pointerdown", () => {
+        if (music.paused && !button.classList.contains("muted")) {
+            music.play().catch(() => {});
+        }
+    }, { once: true });
+});
+</script>
+
 
 </body>
 </html>
