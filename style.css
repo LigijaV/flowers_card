@@ -2257,26 +2257,75 @@ body {
 }
 
 
-
 @media (max-width: 600px) {
-    .scene { width: 100%; height: 100svh; }
-    .moon { right: 4%; top: 7%; transform: scale(.68); transform-origin: top right; }
+    .scene {
+        width: 100%;
+        height: 100svh;
+    }
+
+    .moon {
+        right: 4%;
+        top: 7%;
+        transform: scale(.68);
+        transform-origin: top right;
+    }
+
     .bouquet {
         left: 50%;
-        bottom: -180px;
-        width: 600px;
-        height: 600px;
-        transform: translateX(-50%) translateY(0) scale(1);
+        bottom: -70px;
+        width: 520px;
+        height: 520px;
+        transform: translateX(-50%);
     }
-    .bouquet-glow { width: 92%; height: 82%; filter: blur(42px); }
-    .water { height: 27vh; }
-    .water-flower { width: 62px; height: 62px; }
-    .water-flower .petal { width: 25px; height: 38px; }
-    .water-flower i { width: 14px; height: 14px; }
-    .water-flower--1 { left: 5%; top: 25%; transform: scale(.72); }
-    .water-flower--2 { left: 38%; top: 55%; transform: scale(.5); }
-    .water-flower--3 { right: 5%; top: 23%; transform: scale(.72); }
-    .water-flower--4 { right: 33%; top: 63%; transform: scale(.42); }
+
+    .bouquet-glow {
+        width: 92%;
+        height: 82%;
+        filter: blur(42px);
+    }
+
+    .water {
+        height: 27vh;
+    }
+
+    .water-flower {
+        width: 62px;
+        height: 62px;
+    }
+
+    .water-flower .petal {
+        width: 25px;
+        height: 38px;
+    }
+
+    .water-flower i {
+        width: 14px;
+        height: 14px;
+    }
+
+    .water-flower--1 {
+        left: 5%;
+        top: 25%;
+        transform: scale(.72);
+    }
+
+    .water-flower--2 {
+        left: 38%;
+        top: 55%;
+        transform: scale(.5);
+    }
+
+    .water-flower--3 {
+        right: 5%;
+        top: 23%;
+        transform: scale(.72);
+    }
+
+    .water-flower--4 {
+        right: 33%;
+        top: 63%;
+        transform: scale(.42);
+    }
 }
 
 .aurora { position:absolute; inset:-8% -12%; z-index:1; pointer-events:none; overflow:hidden; opacity:0; animation:aurora-appear 2.2s ease forwards 1s; }
