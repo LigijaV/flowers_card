@@ -39,8 +39,10 @@
     <!-- MOON -->
 
     <div class="moon">
-        <div class="moon__body"></div>
-    </div>
+    <div class="moon__body"></div>
+
+    <button id="musicToggle" aria-label="Play music">♪</button>
+</div>
 
 
     <!-- STARS -->
@@ -818,26 +820,6 @@
 
 </main>
     
-<button
-    id="musicToggle"
-    aria-label="Play music"
-    style="
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 99999;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 1px solid white;
-        background: rgba(10, 30, 60, 0.9);
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-    "
->
-    ♪
-</button>
 <audio id="birthdayMusic" loop>
         <source src="music.mpeg" type="audio/mpeg">
     </audio>
