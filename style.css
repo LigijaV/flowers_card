@@ -702,6 +702,77 @@ body {
   animation-delay: 6.15s;
 }
 
+.decorative-stem {
+  fill: none;
+  stroke: #5e894d;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  opacity: 0.85;
+  animation: decorative-stem-grow 1.3s ease-out forwards;
+}
+
+.decorative-stem--left {
+  animation-delay: 9.1s;
+}
+
+.decorative-stem--right {
+  animation-delay: 9.25s;
+}
+
+.decorative-stem--far-left {
+  animation-delay: 9.4s;
+}
+
+.decorative-stem--far-right {
+  animation-delay: 9.55s;
+}
+
+.leaves {
+  opacity: 0;
+  animation: leaves-appear 1.5s ease forwards 9.2s;
+}
+
+.leaf {
+  fill: url(#leafGradient);
+  stroke: rgba(36, 76, 45, 0.8);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 4px rgba(113, 168, 91, 0.35));
+}
+
+.leaf-vein {
+  fill: none;
+  stroke: rgba(194, 221, 160, 0.48);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.buds {
+  opacity: 0;
+  animation: buds-appear 1.4s ease forwards 9.7s;
+}
+
+.bud {
+  fill: url(#budGradient);
+  stroke: rgba(111, 30, 48, 0.8);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 7px rgba(255, 118, 143, 0.45));
+}
+
+.bud-aura {
+  fill: rgba(255, 110, 135, 0.3);
+  filter: url(#softGlow);
+}
+
+.bud-highlight {
+  fill: none;
+  stroke: rgba(255, 230, 220, 0.7);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+
 .rose-art {
   transform-box: fill-box;
   transform-origin: center;
@@ -1258,7 +1329,7 @@ body {
 }
 
 /* ================================================================
-   MOBILE COMPOSITION — ORIGINAL BOUQUET, SCALED TO SCREEN
+   MOBILE COMPOSITION — ORIGINAL BOUQUET
    ================================================================ */
 
 .mobile-bouquet {
@@ -1266,9 +1337,6 @@ body {
 }
 
 @media (max-width: 600px) {
-
-  /* Keep the original bouquet, but make the entire artwork
-     fit inside the phone width. */
   .bouquet {
     width: 100vw !important;
     height: 100vw !important;
@@ -1278,7 +1346,6 @@ body {
     overflow: visible !important;
   }
 
-  /* DO NOT hide the original bouquet artwork */
   .bouquet .stems,
   .bouquet .decorative-stems,
   .bouquet .leaves,
@@ -1287,15 +1354,12 @@ body {
   .bouquet .bouquet-ribbon {
     display: block !important;
     visibility: visible !important;
-    opacity: 1;
   }
 
-  /* No generated compact/mobile bouquet */
   .mobile-bouquet {
     display: none !important;
   }
 
-  /* Keep the water flowers visible */
   .water-flower {
     display: block !important;
     visibility: visible !important;
@@ -1310,16 +1374,13 @@ body {
     right: 3%;
   }
 
-  /* Original water height */
   .water {
     height: 27vh;
   }
 
-  /* Moon */
   .moon {
     right: 5%;
     top: 7%;
     transform: scale(.7);
   }
 }
-
