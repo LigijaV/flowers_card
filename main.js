@@ -7,20 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     button.addEventListener("click", async () => {
-        try {
-            if (music.paused) {
+        if (music.paused) {
+            try {
                 await music.play();
-                button.textContent = "♫";
-                button.classList.add("playing");
-                button.setAttribute("aria-label", "Pause music");
-            } else {
-                music.pause();
-                button.textContent = "♪";
-                button.classList.remove("playing");
-                button.setAttribute("aria-label", "Play music");
+                button.classList.remove("muted");
+                button.setAttribute("aria-label", "Turn sound off");
+            } catch (error) {
+                console.error("Could not play music:", error);
             }
-        } catch (error) {
-            console.error("Music playback failed:", error);
+        } else {
+            music.pause();
+            button.classList.add("muted");
+            button.setAttribute("aria-label", "Turn sound on");
         }
     });
 });
