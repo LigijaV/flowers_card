@@ -1506,12 +1506,53 @@ body {
    ========================================================= */
 
 @media (max-width: 600px) {
-
-  /* Keep the existing 5 roses exactly where they are */
+  /* ORIGINAL BOUQUET SIZE — keep the complete artwork visible */
   .bouquet {
+    width: 680px;
+    height: 680px;
+    bottom: -35px;
     z-index: 20;
-    overflow: visible;
   }
+
+  /* Original water proportions */
+  .water {
+    height: 27vh;
+  }
+
+  .moon {
+    right: 5%;
+    top: 7%;
+    transform: scale(0.7);
+  }
+
+  .water-flower--1 {
+    left: 3%;
+  }
+
+  .water-flower--3 {
+    right: 3%;
+  }
+
+  /* Keep the new northern lights exactly as they are */
+  .aurora {
+    inset: -10% -35%;
+  }
+
+  .aurora__ribbon {
+    filter: blur(24px);
+    opacity: 0.48;
+  }
+
+  .aurora__mist--one {
+    width: 100vw;
+    height: 50vw;
+  }
+
+  .aurora__mist--two {
+    width: 100vw;
+    height: 55vw;
+  }
+}
 
   .bouquet__svg {
     overflow: visible;
