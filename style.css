@@ -2386,6 +2386,8 @@ body {
     position: absolute;
     z-index: 20;
 
+    pointer-events: auto;
+
     /* sits in the middle of the dark-blue moon circle */
     left: 52px;
     top: 18px;
