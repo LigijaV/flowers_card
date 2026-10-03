@@ -831,61 +831,42 @@
 </audio>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-
+document.addEventListener("DOMContentLoaded", () => {
     const music = document.getElementById("birthdayMusic");
     const button = document.getElementById("musicToggle");
 
     if (!music || !button) {
-        console.error("Music button or audio element not found.");
+        console.error("Music elements missing.");
         return;
     }
 
-    function musicOn() {
-        button.classList.remove("muted");
-        button.setAttribute("aria-label", "Turn music off");
-    }
-
-    function musicOff() {
-        button.classList.add("muted");
-        button.setAttribute("aria-label", "Turn music on");
-    }
-
-    // Try to start automatically
-    music.play()
-        .then(() => {
-            musicOn();
-        })
-        .catch(() => {
-            // Browser blocked autoplay.
-            // The first click/tap will start it.
-            musicOff();
-        });
-
-    // Button
-    button.addEventListener("click", function (event) {
-
+    button.addEventListener("click", async (event) => {
         event.preventDefault();
         event.stopPropagation();
 
+        console.log("MUSIC BUTTON CLICKED");
+
         if (music.paused) {
+            try {
+                await music.play();
 
-            music.play()
-                .then(() => {
-                    musicOn();
-                })
-                .catch((error) => {
-                    console.error("Music could not play:", error);
-                });
+                button.classList.remove("muted");
+                button.setAttribute("aria-label", "Turn music off");
 
+                console.log("MUSIC PLAYING");
+            } catch (error) {
+                console.error("MUSIC FAILED:", error);
+                alert("Music could not be played. Check the music.mpeg file.");
+            }
         } else {
-
             music.pause();
-            musicOff();
 
+            button.classList.add("muted");
+            button.setAttribute("aria-label", "Turn music on");
+
+            console.log("MUSIC PAUSED");
         }
     });
-
 });
 </script>
 
