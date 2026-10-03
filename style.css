@@ -2429,30 +2429,62 @@ body {
     opacity: 0;
 }
 
-#musicToggle.muted .sound-icon--on {
+/* MUSIC BUTTON */
+
+#musicToggle {
+    position: absolute;
+    z-index: 20;
+
+    /* EXACTLY over the dark-blue part of the crescent */
+    left: 53px;
+    top: 18px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 18px;
+    line-height: 1;
+}
+
+#musicToggle span {
+    position: absolute;
+    display: block;
+
+    transition: opacity 0.15s ease;
+}
+
+#musicToggle .sound-on {
     opacity: 0;
 }
 
-#musicToggle.muted .sound-icon--off {
+#musicToggle .sound-off {
     opacity: 1;
 }
 
-#musicToggle:hover .sound-icon {
-    transform: scale(1.1);
-    stroke: #ffffff;
+#musicToggle.playing .sound-on {
+    opacity: 1;
 }
 
-/* Mobile */
+#musicToggle.playing .sound-off {
+    opacity: 0;
+}
+
 @media (max-width: 600px) {
     #musicToggle {
-        left: 41px;
-        top: 13px;
-        width: 28px;
-        height: 28px;
-    }
-
-    .sound-icon {
-        width: 18px;
-        height: 18px;
+        left: 53px;
+        top: 18px;
+        width: 30px;
+        height: 30px;
+        font-size: 17px;
     }
 }
