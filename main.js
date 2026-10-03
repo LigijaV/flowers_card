@@ -3,22 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById("musicToggle");
 
     if (!music || !button) {
+        console.error("Music elements not found.");
         return;
     }
 
-    button.addEventListener("click", async () => {
+    button.addEventListener("click", () => {
         if (music.paused) {
-            try {
-                await music.play();
-                button.classList.remove("muted");
-                button.setAttribute("aria-label", "Turn sound off");
-            } catch (error) {
-                console.error("Could not play music:", error);
-            }
+            music.play()
+                .then(() => {
+                    button.classList.add("playing");
+                })
+                .catch((error) => {
+                    console.error("Music could not play:", error);
+                });
         } else {
             music.pause();
-            button.classList.add("muted");
-            button.setAttribute("aria-label", "Turn sound on");
+            button.classList.remove("playing");
         }
     });
 });
