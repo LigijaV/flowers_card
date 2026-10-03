@@ -1258,119 +1258,68 @@ body {
 }
 
 /* ================================================================
-   MOBILE COMPOSITION
+   MOBILE COMPOSITION — ORIGINAL BOUQUET, SCALED TO SCREEN
    ================================================================ */
 
 .mobile-bouquet {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 600px) {
-  .water {
-    height: 36vh;
-  }
 
+  /* Keep the original bouquet, but make the entire artwork
+     fit inside the phone width. */
   .bouquet {
-    width: 430px;
-    height: 400px;
-    bottom: -8px;
-    z-index: 12;
+    width: 100vw !important;
+    height: 100vw !important;
+    bottom: -20px !important;
+    left: 50% !important;
+    z-index: 20 !important;
+    overflow: visible !important;
   }
 
-  /* Hide the desktop bouquet artwork on phones. */
-  .bouquet .desktop-bouquet-part {
-    display: none !important;
-  }
-
+  /* DO NOT hide the original bouquet artwork */
   .bouquet .stems,
   .bouquet .decorative-stems,
   .bouquet .leaves,
   .bouquet .buds,
   .bouquet > .bouquet__svg > .rose,
   .bouquet .bouquet-ribbon {
-    display: none !important;
-  }
-
-  .mobile-bouquet {
-    display: block;
-  }
-
-  .mobile-bouquet-stem {
-    fill: none;
-    stroke: #719b57;
-    stroke-width: 4;
-    stroke-linecap: round;
-    opacity: .7;
-    filter: drop-shadow(0 0 4px rgba(130, 180, 100, .35));
-  }
-
-  .mobile-bouquet-leaf {
-    opacity: .82;
-  }
-
-  .mobile-bouquet .rose-art {
-    animation-delay: 5.4s !important;
-  }
-
-  .mobile-bouquet .mobile-rose-2 .rose-art { animation-delay: 5.65s !important; }
-  .mobile-bouquet .mobile-rose-3 .rose-art { animation-delay: 5.9s !important; }
-  .mobile-bouquet .mobile-rose-4 .rose-art { animation-delay: 6.15s !important; }
-  .mobile-bouquet .mobile-rose-5 .rose-art { animation-delay: 6.4s !important; }
-
-  /* Remove the large decorative floating flowers around the bouquet. */
-  .water-flower {
-    display: none !important;
-  }
-
-  .lily-pad {
-    opacity: .68;
-  }
-
-  /* Make the aurora a visible part of the mobile sky. */
-  .aurora {
-    inset: -7% -45%;
-  }
-
-  .aurora__ribbon--pink {
-    top: 4%;
-    height: 42vh;
+    display: block !important;
+    visibility: visible !important;
     opacity: 1;
-    filter: blur(20px);
   }
 
-  .aurora__ribbon--blue {
-    top: 14%;
-    height: 46vh;
-    opacity: .9;
-    filter: blur(22px);
+  /* No generated compact/mobile bouquet */
+  .mobile-bouquet {
+    display: none !important;
   }
 
-  .aurora__ribbon--silver {
-    top: 0;
-    height: 48vh;
-    opacity: .75;
-    filter: blur(24px);
+  /* Keep the water flowers visible */
+  .water-flower {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1;
   }
 
-  .aurora__mist--one {
-    width: 125vw;
-    height: 32vw;
-    left: -48vw;
-    top: 39%;
-    opacity: .8;
+  .water-flower--1 {
+    left: 3%;
   }
 
-  .aurora__mist--two {
-    width: 130vw;
-    height: 34vw;
-    right: -50vw;
-    top: 46%;
-    opacity: .78;
+  .water-flower--3 {
+    right: 3%;
   }
 
+  /* Original water height */
+  .water {
+    height: 27vh;
+  }
+
+  /* Moon */
   .moon {
     right: 5%;
     top: 7%;
     transform: scale(.7);
   }
 }
+
