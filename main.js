@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const scene = document.querySelector(".scene");
+    const scene = document.querySelector(".scene");
 
-  if (!scene) {
-    return;
-  }
+    if (!scene) {
+        return;
+    }
 });
