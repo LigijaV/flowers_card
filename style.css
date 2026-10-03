@@ -20,13 +20,34 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 55%, rgba(54, 132, 190, 0.24), transparent 42%), radial-gradient(ellipse at 20% 35%, rgba(41, 91, 157, 0.15), transparent 38%), linear-gradient(to bottom, #12385f 0%, #08213f 48%, #020914 100%);
+  background:
+    radial-gradient(
+      ellipse at 50% 55%,
+      rgba(54, 132, 190, 0.24),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 20% 35%,
+      rgba(41, 91, 157, 0.15),
+      transparent 38%
+    ),
+    linear-gradient(
+      to bottom,
+      #12385f 0%,
+      #08213f 48%,
+      #020914 100%
+    );
 }
 
 .sky {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 62%, rgba(100, 175, 220, 0.12), transparent 38%);
+  background:
+    radial-gradient(
+      ellipse at 50% 62%,
+      rgba(100, 175, 220, 0.12),
+      transparent 38%
+    );
 }
 
 .nebula {
@@ -53,6 +74,10 @@ body {
   background: rgba(90, 69, 164, 0.15);
 }
 
+/* =========================================================
+   MOON
+   ========================================================= */
+
 .moon {
   position: absolute;
   z-index: 2;
@@ -68,8 +93,16 @@ body {
   width: 78px;
   height: 78px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #fffdf1, #dbe8e8 70%, #a5c1ca);
-  box-shadow: 0 0 25px rgba(220, 245, 255, 0.45), 0 0 70px rgba(130, 200, 240, 0.22);
+  background:
+    radial-gradient(
+      circle at 35% 35%,
+      #fffdf1,
+      #dbe8e8 70%,
+      #a5c1ca
+    );
+  box-shadow:
+    0 0 25px rgba(220, 245, 255, 0.45),
+    0 0 70px rgba(130, 200, 240, 0.22);
   position: relative;
 }
 
@@ -83,6 +116,10 @@ body {
   border-radius: 50%;
   background: #12385f;
 }
+
+/* =========================================================
+   STARS
+   ========================================================= */
 
 .stars {
   position: absolute;
@@ -222,6 +259,10 @@ body {
   top: 45%;
 }
 
+/* =========================================================
+   CONSTELLATIONS
+   ========================================================= */
+
 .constellations {
   position: absolute;
   inset: 0;
@@ -296,6 +337,10 @@ body {
   top: 0;
 }
 
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
 .message {
   position: absolute;
   z-index: 100;
@@ -306,7 +351,9 @@ body {
   text-align: center;
   color: #f8e9df;
   opacity: 0;
-  animation: message-in 1.6s ease forwards 0.7s, message-out 1.3s ease forwards 4.3s;
+  animation:
+    message-in 1.6s ease forwards 0.7s,
+    message-out 1.3s ease forwards 4.3s;
 }
 
 .message__main {
@@ -314,7 +361,9 @@ body {
   font-size: clamp(30px, 5vw, 54px);
   font-style: italic;
   letter-spacing: 2px;
-  text-shadow: 0 0 18px rgba(255, 220, 210, 0.3), 0 0 45px rgba(255, 190, 175, 0.15);
+  text-shadow:
+    0 0 18px rgba(255, 220, 210, 0.3),
+    0 0 45px rgba(255, 190, 175, 0.15);
 }
 
 .message__sub {
@@ -323,6 +372,10 @@ body {
   letter-spacing: 6px;
   opacity: 0.78;
 }
+
+/* =========================================================
+   FLOATING PETALS
+   ========================================================= */
 
 .floating-petals {
   position: absolute;
@@ -391,6 +444,10 @@ body {
   animation-delay: 4.5s;
 }
 
+/* =========================================================
+   WATER
+   ========================================================= */
+
 .water {
   position: absolute;
   z-index: 8;
@@ -399,7 +456,17 @@ body {
   bottom: 0;
   height: 30vh;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 0%, rgba(65, 157, 205, 0.28), transparent 48%), linear-gradient(to bottom, rgba(13, 55, 88, 0.92), #041426 90%);
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(65, 157, 205, 0.28),
+      transparent 48%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(13, 55, 88, 0.92),
+      #041426 90%
+    );
   box-shadow: 0 -20px 60px rgba(53, 133, 181, 0.12);
   opacity: 0;
   animation: water-appear 2s ease forwards 7.4s;
@@ -421,7 +488,13 @@ body {
   position: absolute;
   height: 2px;
   border-radius: 50%;
-  background: linear-gradient(to right, transparent, rgba(133, 211, 234, 0.35), transparent);
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(133, 211, 234, 0.35),
+      transparent
+    );
   filter: blur(0.3px);
   animation: ripple-move 6s ease-in-out infinite;
 }
@@ -453,13 +526,24 @@ body {
   animation-delay: 3.1s;
 }
 
+/* =========================================================
+   LILY PADS
+   ========================================================= */
+
 .lily-pad {
   position: absolute;
   width: 100px;
   height: 55px;
   border-radius: 50% 50% 45% 45%;
-  background: radial-gradient(ellipse at 40% 35%, #537d72, #294f4c 75%);
-  box-shadow: inset -8px -5px 15px rgba(0, 0, 0, 0.35), 0 0 15px rgba(61, 137, 150, 0.15);
+  background:
+    radial-gradient(
+      ellipse at 40% 35%,
+      #537d72,
+      #294f4c 75%
+    );
+  box-shadow:
+    inset -8px -5px 15px rgba(0, 0, 0, 0.35),
+    0 0 15px rgba(61, 137, 150, 0.15);
   opacity: 0.8;
   transform: rotate(-8deg);
   animation: water-float 5s ease-in-out infinite;
@@ -506,6 +590,10 @@ body {
   top: 43%;
   transform: rotate(12deg) scale(0.55);
 }
+
+/* =========================================================
+   WATER FLOWERS
+   ========================================================= */
 
 .water-flower {
   position: absolute;
@@ -555,7 +643,12 @@ body {
   height: 18px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fff5b4, #f2ae62);
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fff5b4,
+      #f2ae62
+    );
   box-shadow: 0 0 12px rgba(255, 214, 125, 0.9);
 }
 
@@ -586,6 +679,10 @@ body {
   transform: scale(0.5);
   animation-delay: 2.7s;
 }
+
+/* =========================================================
+   WATER SPARKLES
+   ========================================================= */
 
 .water-sparkles {
   position: absolute;
@@ -639,6 +736,10 @@ body {
   top: 78%;
 }
 
+/* =========================================================
+   BOUQUET
+   ========================================================= */
+
 .bouquet {
   position: absolute;
   z-index: 20;
@@ -665,7 +766,13 @@ body {
   height: 65%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(87, 159, 210, 0.3), rgba(72, 128, 190, 0.14) 40%, transparent 72%);
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(87, 159, 210, 0.3),
+      rgba(72, 128, 190, 0.14) 40%,
+      transparent 72%
+    );
   filter: blur(60px);
   pointer-events: none;
 }
@@ -708,7 +815,13 @@ body {
   opacity: 0;
   transform: scale(0.05) rotate(-8deg);
   filter: blur(8px);
-  animation: rose-bloom 1.6s cubic-bezier(0.12, 0.78, 0.22, 1.25) forwards;
+  animation:
+    rose-bloom 1.6s cubic-bezier(
+      0.12,
+      0.78,
+      0.22,
+      1.25
+    ) forwards;
 }
 
 .rose--1 .rose-art {
@@ -735,7 +848,9 @@ body {
   fill: rgba(255, 108, 132, 0.5);
   opacity: 0;
   filter: url(#roseGlow);
-  animation: aura-appear 1.6s ease forwards, aura-breathe 3.5s ease-in-out infinite 8.8s;
+  animation:
+    aura-appear 1.6s ease forwards,
+    aura-breathe 3.5s ease-in-out infinite 8.8s;
 }
 
 .petal {
@@ -782,72 +897,21 @@ body {
   filter: drop-shadow(0 0 5px rgba(255, 220, 210, 0.95));
 }
 
+/* =========================================================
+   METEORS — DISABLED
+   ========================================================= */
+
 .meteors {
-  position: absolute;
-  inset: 0;
-  z-index: 80;
-  pointer-events: none;
-  opacity: 0;
-  animation: meteor-stage 1s ease forwards 9s;
+  display: none !important;
 }
 
 .meteor {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 0 8px white, 0 0 20px rgba(145, 210, 255, 0.9);
-  opacity: 0;
+  display: none !important;
 }
 
-.meteor::after {
-  content: "";
-  position: absolute;
-  right: 1px;
-  top: 2px;
-  width: 190px;
-  height: 2px;
-  transform: rotate(-35deg);
-  transform-origin: right center;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.95), rgba(125, 190, 255, 0.35), transparent);
-}
-
-.meteor--1 {
-  left: 8%;
-  top: 15%;
-  animation: meteor-fall 2s linear infinite 9.2s;
-}
-
-.meteor--2 {
-  left: 25%;
-  top: 7%;
-  animation: meteor-fall 2.3s linear infinite 9.8s;
-}
-
-.meteor--3 {
-  left: 42%;
-  top: 18%;
-  animation: meteor-fall 1.8s linear infinite 10.4s;
-}
-
-.meteor--4 {
-  left: 62%;
-  top: 8%;
-  animation: meteor-fall 2.2s linear infinite 11s;
-}
-
-.meteor--5 {
-  left: 78%;
-  top: 19%;
-  animation: meteor-fall 2.1s linear infinite 11.6s;
-}
-
-.meteor--6 {
-  left: 91%;
-  top: 32%;
-  animation: meteor-fall 2s linear infinite 12.2s;
-}
+/* =========================================================
+   SPARKLES
+   ========================================================= */
 
 .sparkles {
   position: absolute;
@@ -906,252 +970,260 @@ body {
   top: 18%;
 }
 
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
 @keyframes message-in {
   from {
     opacity: 0;
     filter: blur(8px);
     transform: translate(-50%, -50%) translateY(18px);
   }
+
   to {
     opacity: 1;
     filter: blur(0);
     transform: translate(-50%, -50%);
   }
 }
+
 @keyframes message-out {
   from {
     opacity: 1;
     filter: blur(0);
   }
+
   to {
     opacity: 0;
     filter: blur(8px);
   }
 }
+
 @keyframes bouquet-in {
   from {
     opacity: 0;
     transform: translateX(-50%) translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
 }
+
 @keyframes stem-grow {
   from {
     stroke-dashoffset: 700;
   }
+
   to {
     stroke-dashoffset: 0;
   }
 }
+
 @keyframes rose-bloom {
   0% {
     opacity: 0;
     transform: scale(0.05) rotate(-8deg);
     filter: blur(8px);
   }
+
   35% {
     opacity: 1;
     transform: scale(1.12) rotate(3deg);
     filter: blur(1px);
   }
+
   55% {
     transform: scale(0.96) rotate(-1deg);
   }
+
   75% {
     transform: scale(1.035) rotate(1deg);
   }
+
   100% {
     opacity: 1;
     transform: scale(1) rotate(0deg);
     filter: blur(0);
   }
 }
+
 @keyframes aura-appear {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 0.9;
   }
 }
+
 @keyframes aura-breathe {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.65;
     transform: scale(0.92);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.12);
   }
 }
+
 @keyframes stars-appear {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @keyframes moon-appear {
   from {
     opacity: 0;
     transform: translateY(15px) scale(0.8);
     filter: blur(8px);
   }
+
   to {
     opacity: 0.8;
     transform: translateY(0) scale(1);
     filter: blur(0);
   }
 }
+
 @keyframes particles-appear {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @keyframes petal-drift {
   0% {
     opacity: 0;
     transform: translate(0, 0) rotate(0deg);
   }
+
   10% {
     opacity: 0.8;
   }
+
   50% {
     transform: translate(40px, 80px) rotate(140deg);
   }
+
   90% {
     opacity: 0.8;
   }
+
   100% {
     opacity: 0;
     transform: translate(80px, 160px) rotate(280deg);
   }
 }
+
 @keyframes water-appear {
   from {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes water-float {
-  0%, 100% {
+  0%,
+  100% {
     margin-top: 0;
   }
+
   50% {
     margin-top: -5px;
   }
 }
+
 @keyframes flower-float {
-  0%, 100% {
+  0%,
+  100% {
     margin-top: 0;
-    filter: drop-shadow(0 0 12px rgba(255, 145, 170, 0.45));
+    filter: drop-shadow(
+      0 0 12px rgba(255, 145, 170, 0.45)
+    );
   }
+
   50% {
     margin-top: -5px;
-    filter: drop-shadow(0 0 22px rgba(255, 145, 170, 0.75));
+    filter: drop-shadow(
+      0 0 22px rgba(255, 145, 170, 0.75)
+    );
   }
 }
+
 @keyframes ripple-move {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.2;
     transform: scaleX(0.85);
   }
+
   50% {
     opacity: 0.7;
     transform: scaleX(1.05);
   }
 }
+
 @keyframes water-twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.2;
     transform: scale(0.7);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.3);
   }
 }
-@keyframes meteor-stage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes meteor-fall {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(0.5);
-  }
-  10% {
-    opacity: 1;
-  }
-  65% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-300px, 300px) scale(1.2);
-  }
-}
+
 @keyframes twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.25;
     transform: scale(0.7);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.35);
   }
 }
+
 @keyframes star-twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.35;
   }
+
   50% {
     opacity: 1;
   }
 }
-@media (max-width: 600px) {
-  .bouquet {
-    width: 680px;
-    height: 680px;
-  }
-  .water {
-    height: 27vh;
-  }
-  .moon {
-    right: 5%;
-    top: 7%;
-    transform: scale(0.7);
-  }
-  .water-flower--1 {
-    left: 3%;
-  }
-  .water-flower--3 {
-    right: 3%;
-  }
-}/*# sourceMappingURL=style.css.map */
 
 /* =========================================================
-   MAGICAL NORTHERN LIGHTS — hot pink / light pink / blue / silver
+   NORTHERN LIGHTS
    ========================================================= */
-
-/* ================================================================
-   MAGICAL NORTHERN LIGHTS
-   ================================================================ */
 
 .aurora {
   position: absolute;
@@ -1176,27 +1248,53 @@ body {
 .aurora__ribbon--pink {
   top: 2%;
   height: 45vh;
-  opacity: .9;
+  opacity: 0.9;
   filter: blur(25px);
-  background: linear-gradient(112deg, transparent 8%, rgba(255, 20, 147, .10) 20%, rgba(255, 20, 147, .88) 34%, rgba(255, 105, 180, .75) 43%, rgba(255, 190, 225, .38) 53%, transparent 68%);
+  background:
+    linear-gradient(
+      112deg,
+      transparent 8%,
+      rgba(255, 20, 147, 0.1) 20%,
+      rgba(255, 20, 147, 0.88) 34%,
+      rgba(255, 105, 180, 0.75) 43%,
+      rgba(255, 190, 225, 0.38) 53%,
+      transparent 68%
+    );
   animation: aurora-wave-pink 11s ease-in-out infinite;
 }
 
 .aurora__ribbon--blue {
   top: 12%;
   height: 50vh;
-  opacity: .82;
+  opacity: 0.82;
   filter: blur(27px);
-  background: linear-gradient(108deg, transparent 10%, rgba(70, 190, 255, .12) 24%, rgba(70, 205, 255, .78) 38%, rgba(185, 240, 255, .62) 48%, rgba(105, 165, 255, .30) 60%, transparent 76%);
+  background:
+    linear-gradient(
+      108deg,
+      transparent 10%,
+      rgba(70, 190, 255, 0.12) 24%,
+      rgba(70, 205, 255, 0.78) 38%,
+      rgba(185, 240, 255, 0.62) 48%,
+      rgba(105, 165, 255, 0.3) 60%,
+      transparent 76%
+    );
   animation: aurora-wave-blue 14s ease-in-out infinite;
 }
 
 .aurora__ribbon--silver {
   top: -3%;
   height: 55vh;
-  opacity: .7;
+  opacity: 0.7;
   filter: blur(30px);
-  background: linear-gradient(110deg, transparent 18%, rgba(225, 245, 255, .08) 30%, rgba(245, 250, 255, .58) 43%, rgba(210, 235, 255, .28) 53%, transparent 69%);
+  background:
+    linear-gradient(
+      110deg,
+      transparent 18%,
+      rgba(225, 245, 255, 0.08) 30%,
+      rgba(245, 250, 255, 0.58) 43%,
+      rgba(210, 235, 255, 0.28) 53%,
+      transparent 69%
+    );
   animation: aurora-wave-silver 17s ease-in-out infinite;
 }
 
@@ -1212,8 +1310,14 @@ body {
   height: 20vw;
   left: -18vw;
   top: 36%;
-  opacity: .72;
-  background: radial-gradient(ellipse, rgba(255, 85, 180, .28), rgba(255, 175, 225, .13) 45%, transparent 75%);
+  opacity: 0.72;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255, 85, 180, 0.28),
+      rgba(255, 175, 225, 0.13) 45%,
+      transparent 75%
+    );
   animation: mist-float-one 18s ease-in-out infinite;
 }
 
@@ -1222,111 +1326,140 @@ body {
   height: 22vw;
   right: -22vw;
   top: 43%;
-  opacity: .7;
-  background: radial-gradient(ellipse, rgba(80, 200, 255, .30), rgba(185, 230, 255, .12) 45%, transparent 75%);
+  opacity: 0.7;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(80, 200, 255, 0.3),
+      rgba(185, 230, 255, 0.12) 45%,
+      transparent 75%
+    );
   animation: mist-float-two 21s ease-in-out infinite;
 }
 
-@keyframes aurora-appear {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 @keyframes aurora-wave-pink {
-  0%, 100% { transform: translateX(-5%) rotate(-9deg) skewX(-10deg) scaleY(.88); }
-  50% { transform: translateX(9%) rotate(-1deg) skewX(-4deg) scaleY(1.18); }
+  0%,
+  100% {
+    transform:
+      translateX(-5%)
+      rotate(-9deg)
+      skewX(-10deg)
+      scaleY(0.88);
+  }
+
+  50% {
+    transform:
+      translateX(9%)
+      rotate(-1deg)
+      skewX(-4deg)
+      scaleY(1.18);
+  }
 }
 
 @keyframes aurora-wave-blue {
-  0%, 100% { transform: translateX(6%) rotate(8deg) skewX(11deg) scaleY(.9); }
-  50% { transform: translateX(-9%) rotate(14deg) skewX(4deg) scaleY(1.2); }
+  0%,
+  100% {
+    transform:
+      translateX(6%)
+      rotate(8deg)
+      skewX(11deg)
+      scaleY(0.9);
+  }
+
+  50% {
+    transform:
+      translateX(-9%)
+      rotate(14deg)
+      skewX(4deg)
+      scaleY(1.2);
+  }
 }
 
 @keyframes aurora-wave-silver {
-  0%, 100% { transform: translateX(-5%) rotate(-4deg) scaleY(.86); opacity: .42; }
-  50% { transform: translateX(8%) rotate(5deg) scaleY(1.2); opacity: .82; }
+  0%,
+  100% {
+    transform:
+      translateX(-5%)
+      rotate(-4deg)
+      scaleY(0.86);
+    opacity: 0.42;
+  }
+
+  50% {
+    transform:
+      translateX(8%)
+      rotate(5deg)
+      scaleY(1.2);
+    opacity: 0.82;
+  }
 }
 
 @keyframes mist-float-one {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(9vw, 2vh, 0) scale(1.12); }
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(9vw, 2vh, 0)
+      scale(1.12);
+  }
 }
 
 @keyframes mist-float-two {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-10vw, -2vh, 0) scale(1.12); }
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(-10vw, -2vh, 0)
+      scale(1.12);
+  }
 }
 
-/* ================================================================
-   MOBILE COMPOSITION
-   ================================================================ */
-
-.mobile-bouquet {
-  display: none;
-}
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
-  .water {
-    height: 36vh;
-  }
-
+  /*
+   * IMPORTANT:
+   * This is the original bouquet.
+   * We are NOT creating a second mobile bouquet.
+   */
   .bouquet {
-    width: 430px;
-    height: 400px;
-    bottom: -8px;
-    z-index: 12;
+    width: 680px;
+    height: 680px;
   }
 
-  /* Hide the desktop bouquet artwork on phones. */
-  .bouquet .desktop-bouquet-part {
-    display: none !important;
+  .water {
+    height: 27vh;
   }
 
-  .bouquet .stems,
-  .bouquet .decorative-stems,
-  .bouquet .leaves,
-  .bouquet .buds,
-  .bouquet > .bouquet__svg > .rose,
-  .bouquet .bouquet-ribbon {
-    display: none !important;
+  .moon {
+    right: 5%;
+    top: 7%;
+    transform: scale(0.7);
   }
 
-  .mobile-bouquet {
-    display: block;
+  .water-flower--1 {
+    left: 3%;
   }
 
-  .mobile-bouquet-stem {
-    fill: none;
-    stroke: #719b57;
-    stroke-width: 4;
-    stroke-linecap: round;
-    opacity: .7;
-    filter: drop-shadow(0 0 4px rgba(130, 180, 100, .35));
+  .water-flower--3 {
+    right: 3%;
   }
 
-  .mobile-bouquet-leaf {
-    opacity: .82;
-  }
-
-  .mobile-bouquet .rose-art {
-    animation-delay: 5.4s !important;
-  }
-
-  .mobile-bouquet .mobile-rose-2 .rose-art { animation-delay: 5.65s !important; }
-  .mobile-bouquet .mobile-rose-3 .rose-art { animation-delay: 5.9s !important; }
-  .mobile-bouquet .mobile-rose-4 .rose-art { animation-delay: 6.15s !important; }
-  .mobile-bouquet .mobile-rose-5 .rose-art { animation-delay: 6.4s !important; }
-
-  /* Remove the large decorative floating flowers around the bouquet. */
-  .water-flower {
-    display: none !important;
-  }
-
-  .lily-pad {
-    opacity: .68;
-  }
-
-  /* Make the aurora a visible part of the mobile sky. */
+  /*
+   * The pretty northern lights remain visible on phones.
+   */
   .aurora {
     inset: -7% -45%;
   }
@@ -1341,14 +1474,14 @@ body {
   .aurora__ribbon--blue {
     top: 14%;
     height: 46vh;
-    opacity: .9;
+    opacity: 0.9;
     filter: blur(22px);
   }
 
   .aurora__ribbon--silver {
     top: 0;
     height: 48vh;
-    opacity: .75;
+    opacity: 0.75;
     filter: blur(24px);
   }
 
@@ -1357,7 +1490,7 @@ body {
     height: 32vw;
     left: -48vw;
     top: 39%;
-    opacity: .8;
+    opacity: 0.8;
   }
 
   .aurora__mist--two {
@@ -1365,12 +1498,6 @@ body {
     height: 34vw;
     right: -50vw;
     top: 46%;
-    opacity: .78;
-  }
-
-  .moon {
-    right: 5%;
-    top: 7%;
-    transform: scale(.7);
+    opacity: 0.78;
   }
 }
