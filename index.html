@@ -826,60 +826,66 @@
 
 </main>
     
-<audio id="birthdayMusic" loop>
-        <source src="music.mpeg" type="audio/mpeg">
-    </audio>
+<audio id="birthdayMusic" loop playsinline preload="auto">
+    <source src="music.mpeg" type="audio/mpeg">
+</audio>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+
     const music = document.getElementById("birthdayMusic");
     const button = document.getElementById("musicToggle");
 
     if (!music || !button) {
-        console.error("Music setup failed.");
+        console.error("Music button or audio element not found.");
         return;
     }
 
-    function tryPlayMusic() {
-        music.play()
-            .then(() => {
-                button.classList.remove("muted");
-            })
-            .catch(() => {
-                // Browser blocked autoplay.
-                // User can start it by pressing the button.
-            });
+    function musicOn() {
+        button.classList.remove("muted");
+        button.setAttribute("aria-label", "Turn music off");
     }
 
-    // Try autoplay immediately.
-    tryPlayMusic();
+    function musicOff() {
+        button.classList.add("muted");
+        button.setAttribute("aria-label", "Turn music on");
+    }
 
-    // Button ON/OFF
-    button.addEventListener("click", (event) => {
+    // Try to start automatically
+    music.play()
+        .then(() => {
+            musicOn();
+        })
+        .catch(() => {
+            // Browser blocked autoplay.
+            // The first click/tap will start it.
+            musicOff();
+        });
+
+    // Button
+    button.addEventListener("click", function (event) {
+
         event.preventDefault();
         event.stopPropagation();
 
         if (music.paused) {
+
             music.play()
                 .then(() => {
-                    button.classList.remove("muted");
+                    musicOn();
                 })
                 .catch((error) => {
-                    console.error("Could not play music:", error);
+                    console.error("Music could not play:", error);
                 });
+
         } else {
+
             music.pause();
-            button.classList.add("muted");
+            musicOff();
+
         }
     });
 
-    // If the browser blocked autoplay, the first tap anywhere
-    // will start the music.
-    document.addEventListener("pointerdown", () => {
-        if (music.paused && !button.classList.contains("muted")) {
-            music.play().catch(() => {});
-        }
-    }, { once: true });
 });
 </script>
 
