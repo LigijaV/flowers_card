@@ -14,17 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
             button.classList.remove("muted");
             return;
         }
-
-        music.play()
-            .then(() => {
-                musicStarted = true;
-                button.classList.remove("muted");
-            })
-            .catch(() => {
-                // Browser blocked autoplay.
-                // The first user interaction will try again.
-                button.classList.add("muted");
-            });
     }
 
     // Try to start automatically when the page opens.
