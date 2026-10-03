@@ -2377,3 +2377,82 @@ body {
 .stem,.decorative-stem { stroke:#638d4c; }
 .leaf { fill:url(#leafGradient); stroke:rgba(36,76,45,.8); }
 @media(max-width:600px){.aurora{inset:-8% -28%}.aurora__ribbon{filter:blur(24px)}.aurora__mist--one{width:100vw;height:50vw}.aurora__mist--two{width:100vw;height:55vw}}
+
+/* =========================================================
+   MUSIC BUTTON
+   ========================================================= */
+
+#musicToggle {
+    position: absolute;
+    z-index: 10;
+
+    /* sits on the dark-blue part of the moon */
+    left: 53px;
+    top: 18px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.sound-icon {
+    position: absolute;
+
+    width: 19px;
+    height: 19px;
+
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.9);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    filter: drop-shadow(0 0 4px rgba(220, 240, 255, 0.35));
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sound-icon--on {
+    opacity: 1;
+}
+
+.sound-icon--off {
+    opacity: 0;
+}
+
+#musicToggle.muted .sound-icon--on {
+    opacity: 0;
+}
+
+#musicToggle.muted .sound-icon--off {
+    opacity: 1;
+}
+
+#musicToggle:hover .sound-icon {
+    transform: scale(1.1);
+    stroke: #ffffff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    #musicToggle {
+        left: 41px;
+        top: 13px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .sound-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
