@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // The original bouquet is already part of the SVG.
-  // No separate mobile bouquet is created.
+  /*
+   * The birthday scene is intentionally CSS/SCSS driven.
+   * JavaScript is kept minimal so the animation remains
+   * easy to edit and control.
+   */
+
+  const scene = document.querySelector(".scene");
+
+  if (!scene) {
+    return;
+  }
 });
