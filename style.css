@@ -61,7 +61,7 @@ body {
   width: 90px;
   height: 90px;
   opacity: 0;
-  animation: moon-appear 2s ease forwards 8s;
+  animation: moon-appear 2s ease forwards 3s;
 }
 
 .moon__body {
@@ -89,7 +89,7 @@ body {
   inset: 0;
   z-index: 3;
   opacity: 0;
-  animation: stars-appear 2s ease forwards 8s;
+  animation: stars-appear 2s ease forwards 2.5s;
 }
 
 .star {
@@ -227,7 +227,7 @@ body {
   inset: 0;
   z-index: 4;
   opacity: 0;
-  animation: stars-appear 2s ease forwards 8.4s;
+  animation: stars-appear 2s ease forwards 3s;
 }
 
 .constellation {
@@ -330,7 +330,7 @@ body {
   z-index: 70;
   pointer-events: none;
   opacity: 0;
-  animation: particles-appear 2s ease forwards 8.5s;
+  animation: particles-appear 2s ease forwards 8.8s;
 }
 
 .floating-petals span {
@@ -346,49 +346,49 @@ body {
 .floating-petals span:nth-child(1) {
   left: 13%;
   top: 48%;
-  animation-delay: 1s;
+  animation-delay: 7s;
 }
 
 .floating-petals span:nth-child(2) {
   left: 24%;
   top: 35%;
-  animation-delay: 3s;
+  animation-delay: 8.5s;
 }
 
 .floating-petals span:nth-child(3) {
   left: 77%;
   top: 45%;
-  animation-delay: 2s;
+  animation-delay: 7.5s;
 }
 
 .floating-petals span:nth-child(4) {
   left: 84%;
   top: 55%;
-  animation-delay: 5s;
+  animation-delay: 9s;
 }
 
 .floating-petals span:nth-child(5) {
   left: 18%;
   top: 73%;
-  animation-delay: 4s;
+  animation-delay: 8s;
 }
 
 .floating-petals span:nth-child(6) {
   left: 82%;
   top: 70%;
-  animation-delay: 6s;
+  animation-delay: 10s;
 }
 
 .floating-petals span:nth-child(7) {
   left: 34%;
   top: 61%;
-  animation-delay: 2.5s;
+  animation-delay: 8.5s;
 }
 
 .floating-petals span:nth-child(8) {
   left: 67%;
   top: 68%;
-  animation-delay: 4.5s;
+  animation-delay: 10.5s;
 }
 
 .water {
@@ -399,58 +399,98 @@ body {
   bottom: 0;
   height: 30vh;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 0%, rgba(65, 157, 205, 0.28), transparent 48%), linear-gradient(to bottom, rgba(13, 55, 88, 0.92), #041426 90%);
-  box-shadow: 0 -20px 60px rgba(53, 133, 181, 0.12);
+  background: radial-gradient(ellipse at 50% 0%, rgba(86, 178, 222, 0.25), transparent 45%), linear-gradient(to bottom, rgba(15, 67, 105, 0.82), rgba(5, 30, 54, 0.96) 55%, #031321 100%);
+  box-shadow: 0 -24px 70px rgba(54, 148, 198, 0.16);
   opacity: 0;
-  animation: water-appear 2s ease forwards 7.4s;
+  animation: water-reveal 3s cubic-bezier(0.16, 0.72, 0.25, 1) forwards 5s;
+}
+
+.water::before,
+.water::after {
+  content: "";
+  position: absolute;
+  left: -15%;
+  top: -8px;
+  width: 130%;
+  height: 75px;
+  pointer-events: none;
+  border-top: 2px solid rgba(137, 218, 241, 0.2);
+  border-radius: 50%;
+  filter: blur(0.4px);
+  animation: surface-wave 8s ease-in-out infinite 7s;
+}
+
+.water::after {
+  top: 22px;
+  width: 145%;
+  left: -22%;
+  border-top: 1px solid rgba(174, 229, 244, 0.13);
+  opacity: 0.8;
+  animation: surface-wave-reverse 11s ease-in-out infinite 8s;
 }
 
 .water-glow {
   position: absolute;
   left: 50%;
-  top: -20px;
-  width: 70%;
-  height: 100px;
+  top: -35px;
+  width: 75%;
+  height: 120px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: rgba(104, 190, 224, 0.18);
-  filter: blur(35px);
+  background: radial-gradient(ellipse, rgba(101, 198, 231, 0.2), rgba(64, 143, 190, 0.08) 45%, transparent 72%);
+  filter: blur(32px);
+  animation: water-glow-drift 9s ease-in-out infinite 6s;
 }
 
 .water-ripple {
   position: absolute;
-  height: 2px;
+  height: 18px;
+  border-top: 2px solid rgba(133, 211, 234, 0.28);
   border-radius: 50%;
-  background: linear-gradient(to right, transparent, rgba(133, 211, 234, 0.35), transparent);
-  filter: blur(0.3px);
-  animation: ripple-move 6s ease-in-out infinite;
+  background: radial-gradient(ellipse at center, rgba(104, 190, 224, 0.07), transparent 70%);
+  filter: blur(0.35px);
+  animation: ripple-flow 7s ease-in-out infinite 6s;
 }
 
 .ripple--1 {
-  width: 260px;
-  left: 3%;
-  top: 38%;
+  width: 320px;
+  left: -4%;
+  top: 31%;
 }
 
 .ripple--2 {
-  width: 330px;
-  left: 24%;
-  top: 62%;
-  animation-delay: 1.5s;
+  width: 390px;
+  left: 18%;
+  top: 52%;
+  animation-delay: 7.5s;
 }
 
 .ripple--3 {
-  width: 300px;
-  right: 2%;
-  top: 32%;
-  animation-delay: 2.2s;
+  width: 350px;
+  right: -5%;
+  top: 28%;
+  animation-delay: 8.5s;
 }
 
 .ripple--4 {
-  width: 420px;
-  right: 18%;
-  top: 70%;
-  animation-delay: 3.1s;
+  width: 470px;
+  right: 13%;
+  top: 72%;
+  animation-delay: 9.5s;
+}
+
+.ripple--5 {
+  width: 260px;
+  left: 42%;
+  top: 38%;
+  animation-delay: 10s;
+}
+
+.ripple--6 {
+  width: 300px;
+  left: 8%;
+  top: 80%;
+  animation-delay: 11s;
 }
 
 .lily-pad {
@@ -460,9 +500,8 @@ body {
   border-radius: 50% 50% 45% 45%;
   background: radial-gradient(ellipse at 40% 35%, #537d72, #294f4c 75%);
   box-shadow: inset -8px -5px 15px rgba(0, 0, 0, 0.35), 0 0 15px rgba(61, 137, 150, 0.15);
-  opacity: 0.8;
-  transform: rotate(-8deg);
-  animation: water-float 5s ease-in-out infinite;
+  opacity: 0;
+  animation: pad-appear 1.8s ease forwards 6.7s, water-float 5s ease-in-out infinite 8.5s;
 }
 
 .lily-pad::after {
@@ -511,8 +550,9 @@ body {
   position: absolute;
   width: 78px;
   height: 78px;
+  opacity: 0;
   filter: drop-shadow(0 0 12px rgba(255, 145, 170, 0.55));
-  animation: flower-float 4s ease-in-out infinite;
+  animation: water-flower-appear 1.8s ease forwards 7s, flower-float 4s ease-in-out infinite 8.5s;
 }
 
 .water-flower .petal {
@@ -563,28 +603,28 @@ body {
   left: 9%;
   top: 28%;
   transform: scale(0.75);
-  animation-delay: 0.5s;
+  animation-delay: 6.8s, 8.5s;
 }
 
 .water-flower--2 {
   left: 39%;
   top: 52%;
   transform: scale(0.6);
-  animation-delay: 1.3s;
+  animation-delay: 7.2s, 9s;
 }
 
 .water-flower--3 {
   right: 10%;
   top: 25%;
   transform: scale(0.9);
-  animation-delay: 2s;
+  animation-delay: 7s, 8.8s;
 }
 
 .water-flower--4 {
   right: 34%;
   top: 62%;
   transform: scale(0.5);
-  animation-delay: 2.7s;
+  animation-delay: 7.5s, 9.4s;
 }
 
 .water-sparkles {
@@ -877,73 +917,6 @@ body {
   stroke-width: 2;
 }
 
-.meteors {
-  position: absolute;
-  inset: 0;
-  z-index: 80;
-  pointer-events: none;
-  opacity: 0;
-  animation: meteor-stage 1s ease forwards 9s;
-}
-
-.meteor {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 0 8px white, 0 0 20px rgba(145, 210, 255, 0.9);
-  opacity: 0;
-}
-
-.meteor::after {
-  content: "";
-  position: absolute;
-  right: 1px;
-  top: 2px;
-  width: 190px;
-  height: 2px;
-  transform: rotate(-35deg);
-  transform-origin: right center;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.95), rgba(125, 190, 255, 0.35), transparent);
-}
-
-.meteor--1 {
-  left: 8%;
-  top: 15%;
-  animation: meteor-fall 2s linear infinite 9.2s;
-}
-
-.meteor--2 {
-  left: 25%;
-  top: 7%;
-  animation: meteor-fall 2.3s linear infinite 9.8s;
-}
-
-.meteor--3 {
-  left: 42%;
-  top: 18%;
-  animation: meteor-fall 1.8s linear infinite 10.4s;
-}
-
-.meteor--4 {
-  left: 62%;
-  top: 8%;
-  animation: meteor-fall 2.2s linear infinite 11s;
-}
-
-.meteor--5 {
-  left: 78%;
-  top: 19%;
-  animation: meteor-fall 2.1s linear infinite 11.6s;
-}
-
-.meteor--6 {
-  left: 91%;
-  top: 32%;
-  animation: meteor-fall 2s linear infinite 12.2s;
-}
-
 .sparkles {
   position: absolute;
   inset: 0;
@@ -951,7 +924,7 @@ body {
   pointer-events: none;
   opacity: 0;
   color: rgba(240, 248, 230, 0.95);
-  animation: sparkles-in 1.5s ease forwards 8.3s;
+  animation: sparkles-in 1.5s ease forwards 10.8s;
 }
 
 .sparkles span {
@@ -1023,14 +996,163 @@ body {
     filter: blur(8px);
   }
 }
-@keyframes bouquet-in {
+@keyframes stars-appear {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(50px);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+  }
+}
+@keyframes moon-appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.8);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+@keyframes water-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes surface-wave {
+  0%, 100% {
+    transform: translateX(-2%) scaleY(0.9);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateX(7%) scaleY(1.15);
+    opacity: 0.65;
+  }
+}
+@keyframes surface-wave-reverse {
+  0%, 100% {
+    transform: translateX(5%) scaleY(1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translateX(-8%) scaleY(0.82);
+    opacity: 0.38;
+  }
+}
+@keyframes water-glow-drift {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(0.92);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateX(-46%) scaleX(1.08);
+    opacity: 0.9;
+  }
+}
+@keyframes ripple-flow {
+  0% {
+    opacity: 0.08;
+    transform: translateX(-7%) scaleX(0.72) scaleY(0.75);
+  }
+  25% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.55;
+    transform: translateX(5%) scaleX(1.08) scaleY(1);
+  }
+  75% {
+    opacity: 0.28;
+  }
+  100% {
+    opacity: 0.08;
+    transform: translateX(12%) scaleX(0.78) scaleY(0.8);
+  }
+}
+@keyframes pad-appear {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 0.8;
+    filter: blur(0);
+  }
+}
+@keyframes water-float {
+  0%, 100% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -5px;
+  }
+}
+@keyframes water-flower-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(12px);
+    filter: blur(5px) drop-shadow(0 0 4px rgba(255, 145, 170, 0.2));
+  }
+  to {
+    opacity: 1;
+    filter: blur(0) drop-shadow(0 0 12px rgba(255, 145, 170, 0.55));
+  }
+}
+@keyframes flower-float {
+  0%, 100% {
+    margin-top: 0;
+    filter: drop-shadow(0 0 12px rgba(255, 145, 170, 0.45));
+  }
+  50% {
+    margin-top: -5px;
+    filter: drop-shadow(0 0 22px rgba(255, 145, 170, 0.75));
+  }
+}
+@keyframes water-twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+@keyframes bouquet-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100px) scale(0.88);
+    filter: blur(10px);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-8px) scale(1.02);
+    filter: blur(1px);
+  }
+  75% {
+    transform: translateX(-50%) translateY(2px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+@keyframes bouquet-aura {
+  0%, 100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.06);
   }
 }
 @keyframes stem-grow {
@@ -1039,6 +1161,40 @@ body {
   }
   to {
     stroke-dashoffset: 0;
+  }
+}
+@keyframes decorative-stem-grow {
+  from {
+    stroke-dashoffset: 300;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.85;
+  }
+}
+@keyframes leaves-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+@keyframes buds-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
   }
 }
 @keyframes rose-bloom {
@@ -1082,23 +1238,15 @@ body {
     transform: scale(1.12);
   }
 }
-@keyframes stars-appear {
+@keyframes ribbon-appear {
   from {
     opacity: 0;
+    transform: scale(0.7) translateY(15px);
+    filter: blur(5px);
   }
   to {
     opacity: 1;
-  }
-}
-@keyframes moon-appear {
-  from {
-    opacity: 0;
-    transform: translateY(15px) scale(0.8);
-    filter: blur(8px);
-  }
-  to {
-    opacity: 0.8;
-    transform: translateY(0) scale(1);
+    transform: scale(1) translateY(0);
     filter: blur(0);
   }
 }
@@ -1129,76 +1277,12 @@ body {
     transform: translate(80px, 160px) rotate(280deg);
   }
 }
-@keyframes water-appear {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes water-float {
-  0%, 100% {
-    margin-top: 0;
-  }
-  50% {
-    margin-top: -5px;
-  }
-}
-@keyframes flower-float {
-  0%, 100% {
-    margin-top: 0;
-    filter: drop-shadow(0 0 12px rgba(255, 145, 170, 0.45));
-  }
-  50% {
-    margin-top: -5px;
-    filter: drop-shadow(0 0 22px rgba(255, 145, 170, 0.75));
-  }
-}
-@keyframes ripple-move {
-  0%, 100% {
-    opacity: 0.2;
-    transform: scaleX(0.85);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scaleX(1.05);
-  }
-}
-@keyframes water-twinkle {
-  0%, 100% {
-    opacity: 0.2;
-    transform: scale(0.7);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.3);
-  }
-}
-@keyframes meteor-stage {
+@keyframes sparkles-in {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
-  }
-}
-@keyframes meteor-fall {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0) scale(0.5);
-  }
-  10% {
-    opacity: 1;
-  }
-  65% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-300px, 300px) scale(1.2);
   }
 }
 @keyframes twinkle {
@@ -1237,67 +1321,6 @@ body {
   }
   .water-flower--3 {
     right: 3%;
-  }
-}/*# sourceMappingURL=style.css.map */
-
-@keyframes bouquet-aura {
-  0%, 100% {
-    opacity: 0.55;
-    transform: translate(-50%, -50%) scale(0.94);
-  }
-  50% {
-    opacity: 0.9;
-    transform: translate(-50%, -50%) scale(1.06);
-  }
-}
-
-@keyframes decorative-stem-grow {
-  from {
-    stroke-dashoffset: 300;
-    opacity: 0;
-  }
-  to {
-    stroke-dashoffset: 0;
-    opacity: 0.85;
-  }
-}
-
-@keyframes leaves-appear {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-    filter: blur(4px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
-
-@keyframes buds-appear {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-    filter: blur(4px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
-
-@keyframes ribbon-appear {
-  from {
-    opacity: 0;
-    transform: scale(0.7) translateY(15px);
-    filter: blur(5px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    filter: blur(0);
   }
 }
 
@@ -1478,4 +1501,5 @@ body {
     transform: scale(.7);
   }
 }
+
 
