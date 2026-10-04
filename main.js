@@ -2,56 +2,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const music = document.getElementById("birthdayMusic");
     const button = document.getElementById("musicToggle");
 
-    if (!music || !button) {
-        return;
+    if (!music || !button) return;
+
+    function musicOn() {
+        button.classList.remove("muted");
+        button.setAttribute("aria-label", "Turn music off");
     }
 
-    let musicStarted = false;
-
-    function startMusic() {
-        if (!music.paused) {
-            musicStarted = true;
-            button.classList.remove("muted");
-            return;
-        }
+    function musicOff() {
+        button.classList.add("muted");
+        button.setAttribute("aria-label", "Turn music on");
     }
 
-    // Try to start automatically when the page opens.
-    startMusic();
+    // Try unmuted autoplay first (in case browser allows it)
+    music.play().then(musicOn).catch(() => {
+        musicOff();
+        // Fallback: Start audio on the very first tap/click anywhere
+        const startAudioOnInteraction = () => {
+            music.play().then(() => {
+                musicOn();
+                removeInteractionListeners();
+            });
+        };
 
-    // If autoplay was blocked, start music on the first interaction.
-    const startOnInteraction = () => {
-        if (!musicStarted) {
-            startMusic();
+        function removeInteractionListeners() {
+            document.removeEventListener("click", startAudioOnInteraction);
+            document.removeEventListener("touchstart", startAudioOnInteraction);
+            document.removeEventListener("keydown", startAudioOnInteraction);
         }
 
-        if (musicStarted) {
-            document.removeEventListener("pointerdown", startOnInteraction);
-            document.removeEventListener("touchstart", startOnInteraction);
-            document.removeEventListener("keydown", startOnInteraction);
-        }
-    };
+        document.addEventListener("click", startAudioOnInteraction);
+        document.addEventListener("touchstart", startAudioOnInteraction);
+        document.addEventListener("keydown", startAudioOnInteraction);
+    });
 
-    document.addEventListener("pointerdown", startOnInteraction);
-    document.addEventListener("touchstart", startOnInteraction);
-    document.addEventListener("keydown", startOnInteraction);
-
-    // Music button
-    button.addEventListener("click", (event) => {
-        event.stopPropagation();
-
+    // Toggle button behavior
+    button.addEventListener("click", (e) => {
+        e.stopPropagation();
         if (music.paused) {
-            music.play()
-                .then(() => {
-                    musicStarted = true;
-                    button.classList.remove("muted");
-                })
-                .catch((error) => {
-                    console.error("Music could not play:", error);
-                });
+            music.play().then(musicOn);
         } else {
             music.pause();
-            button.classList.add("muted");
+            musicOff();
         }
     });
 });
