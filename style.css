@@ -2488,3 +2488,14 @@ body {
 .constellations {
     pointer-events: none;
 }
+
+.message__signature {
+    margin-top: 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: rgba(255, 245, 235, 0.9);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 235, 220, 0.2);
+}
